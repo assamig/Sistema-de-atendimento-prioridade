@@ -9,7 +9,8 @@
 * Estrutura usada para o cadastro por ordem de chegada dos pacientes. Pacientes que chegarem primeiro, serão encaminhados primeiros para a triagem por ordem de chegada, cadastrando suas informações no sistema e os colocando na fila de triagem de acordo com os que vão chegando primeiro.
 * A fila tem um limite de 10 pessoas, ao atingir o limite, a triagem deve começar imediatamente, mas pode se optar por ir triando os pacientes que estão na fila ou se atingir o limite
 * Imagem de demonstração:
-  <img width="442" height="357" alt="image" src="https://github.com/user-attachments/assets/92d37c5b-2bfe-477a-bc1a-daf406f5cb56" />
+<img width="442" height="357" alt="image" src="https://github.com/user-attachments/assets/92d37c5b-2bfe-477a-bc1a-daf406f5cb56" />
+
 * Obs: perceba que Pedro chegou primeiro que João na fila, logo Pedro irá para a triagem primeiro
 
 
