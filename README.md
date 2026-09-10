@@ -185,4 +185,16 @@ Com esse fluxo, fica fácil de se ver como cada Classe se conecta e como cada pe
 
 # Como rodar
 * Garanta que sua máquina tenha o Python a partir da versão 3.13
+
+* Instale a biblioteca rich:
+
+```bash
+pip install rich
+```
+
 * Baixe o arquivo do repositório e execute no terminal: `python core.py`
+
+
+# Conclusão:
+* Esse projeto tem como objetivo mostrar como estruturas e persistência de dados se conectam em uma aplicação Python para entregar um produto viável e real, que garanta a unicidade desses dados em tempo real de forma simples.
+* O ponto central que une essas estruturas e persistências é a forma fluída como esses dados vão sendo recebidos pelas classes como um trânsito tranquilo em movimento.
