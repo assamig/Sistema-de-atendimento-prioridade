@@ -161,7 +161,25 @@ Aqui no código da classe do Heap podemos ver com detalhes como esse paciente é
 
 * Esse processo é crucial para garantir que os pacientes salvos seja o exato paciente que estava na Fila por ordem de chegada (FIFO) e também implementar a prioridade no arquivo de persistência do heap, para que as prioridades de cada paciente passe na frente baseando-se na prioridade de maior urgência
 
-* O fluxo fica mais ou menos assim:
+
+# Conexão entre as persistências os dados dos pacientes cadastrados e suas prioridades
+
+Para relembrar a conexão entre as classes que faz a ponte entre os arquivos de persistência, no momento em que um paciente é triado e classificado com sua prioridade, como vimos, por baixo dos panos o paciente que estava no topo da fila, no caso o primeiro por ordem de chegada, é adicionado no Heap, o inserindo na lista de pacientes triados classificados por seu nível de prioridade. Só pelo detalhe que o primeiro paciente que chegou por ordem de chegada é inserido no Heap quando está para ser triado, fortifica mais ainda que os pacientes cadastrados são únicos e, na consulta de seus dados e de suas prioridades garanta que esteja apontando para o mesmo paciente. E o que garante isso 100% é na funcionalidade de remover paciente. Quando remove um paciente do sistema, se informa o índice do paciente que deseja remover, e quando remove, apaga o paciente referenciado pelo índice passado, tanto no arquivo de persistência dos dados cadastrais, tanto do arquivo de persistência de prioridade o que garante 100% que aquele paciente é o mesmo e único no sistema.
+* Abaixo podemos ver exemplo de como está no código quando quer excluir um paciente do sistema:
+
+  `core.py:`
+    ```
+      remocao = int(input("Digite o índice do paciente que deseja remover: ")) - 1
+                        dados2.pop(remocao)
+                        remocao = heapMax.remover()
+                        salvar_dados()
+                        print("[bold green]Paciente removido com sucesso. ❌[bold green]")
+    ```
+
+
+  
+
+* Partindo desses conceitos importantes para o funcionamento do sistema, fluxo fica assim:
 
 
 ```mermaid
@@ -179,6 +197,7 @@ flowchart TD
     
     
 ```
+
 
 Com esse fluxo, fica fácil de se ver como cada Classe se conecta e como cada persistência age garantindo na ligação fluída dos dados e garantindo que aquele paciente não seja duplicado e seja único no sistema.
 
